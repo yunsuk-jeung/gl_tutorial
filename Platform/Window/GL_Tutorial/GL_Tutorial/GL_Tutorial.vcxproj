@@ -23,7 +23,12 @@
     <ClCompile Include="windows_main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglefshader.txt" />
+    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglevshader.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -149,14 +154,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\dbswh\Desktop\workspace\GL_Tutorial\GL_Tutorial;C:\Users\dbswh\Desktop\workspace\maxstsdk_3rdparty_library\library\OpenGL\include;C:\Users\dbswh\Desktop\workspace\maxstsdk_3rdparty_library\header\Eigen3.3.7;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../GL_Tutorial;../../../../../maxstsdk_3rdparty_library\library\OpenGL\include;../../../../../maxstsdk_3rdparty_library\header\Eigen3.3.7;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Users\dbswh\Desktop\workspace\maxstsdk_3rdparty_library\library\OpenGL\lib\windows\x64\freeglut.lib;C:\Users\dbswh\Desktop\workspace\maxstsdk_3rdparty_library\library\OpenGL\lib\windows\x64\glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../../../../maxstsdk_3rdparty_library\library\OpenGL\lib\windows\x64\freeglut.lib;../../../../../maxstsdk_3rdparty_library\library\OpenGL\lib\windows\x64\glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

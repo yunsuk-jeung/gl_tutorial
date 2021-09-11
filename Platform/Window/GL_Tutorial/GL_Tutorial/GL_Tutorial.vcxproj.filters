@@ -16,6 +16,9 @@
     <Filter Include="Viewer">
       <UniqueIdentifier>{7c42ef50-a7b2-4a64-baee-df6136fa1435}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Viewer\shader">
+      <UniqueIdentifier>{d1725230-dc21-473f-9c67-edce91d268a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="windows_main.cpp">
@@ -29,5 +32,16 @@
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h">
       <Filter>Viewer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h">
+      <Filter>Viewer\shader</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglevshader.txt">
+      <Filter>Viewer\shader</Filter>
+    </Text>
+    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglefshader.txt">
+      <Filter>Viewer\shader</Filter>
+    </Text>
   </ItemGroup>
 </Project>
