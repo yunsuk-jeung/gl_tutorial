@@ -19,6 +19,9 @@
     <Filter Include="Viewer\shader">
       <UniqueIdentifier>{d1725230-dc21-473f-9c67-edce91d268a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Viewer\Renderer">
+      <UniqueIdentifier>{9f2be6b6-6afa-4d4c-b8df-f1380a4cd2cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="windows_main.cpp">
@@ -27,6 +30,12 @@
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.cpp">
       <Filter>Viewer</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.cpp">
+      <Filter>Viewer\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.cpp">
+      <Filter>Viewer\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h">
@@ -34,6 +43,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h">
       <Filter>Viewer\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.h">
+      <Filter>Viewer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.h">
+      <Filter>Viewer\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
