@@ -3,47 +3,49 @@
 
 
 void TriangleRenderer::initialize(std::string shaderFolderPath) {
-	
+
 	shader.init(shaderFolderPath + "/trianglevshader.txt", shaderFolderPath + "/trianglefshader.txt");
-	
-	vertexHandle = glGetAttribLocation(shader.getShaderId(), "vertexModel");
-
-	TriangleRenderer::setData();
-}
-
-void TriangleRenderer::setData() {
 
 	vertexData.push_back(Eigen::Vector3f(-1.0f, -1.0f, 0.0f));
 	vertexData.push_back(Eigen::Vector3f(1.0f, -1.0f, 0.0f));
 	vertexData.push_back(Eigen::Vector3f(0.0f, 1.0f, 0.0f));
-	//vertexData.push_back(Eigen::Vector3f(0.0f, 1.0f, 0.0f));
-	//vertexData.push_back(Eigen::Vector3f(1.0f, -1.0f, 0.0f));
-	//vertexData.push_back(Eigen::Vector3f(1.0f, 1.0f, 0.0f));
 
+	MVPMatrix.setIdentity();
+
+	MVPMatrix.block<3, 1>(0, 3) = Eigen::Vector3f(0, 0, 0);
+
+	vertexHandle = glGetAttribLocation(shader.getShaderId(), "vertexModel");
+	//vertexHandle = 0;
 	glGenBuffers(1, &vertexBuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-	glBufferData(GL_ARRAY_BUFFER, vertexData.size() * sizeof(float) * 3, &vertexData[0], GL_STATIC_DRAW);
 
+	MVPMatrixHandle = glGetUniformLocation(shader.getShaderId(), "MVPMatrix");
+	shader.bind();
+	
 }
 
-void TriangleRenderer::onDraw() {
 
+void TriangleRenderer::onDraw(Eigen::Matrix4f VPMatrix) {
 
 	shader.bind();
 
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-	glVertexAttribPointer(
-		0,                  // 0번째 속성(attribute). 0 이 될 특별한 이유는 없지만, 쉐이더의 레이아웃(layout)와 반드시 맞추어야 합니다.
-		3,                  // 크기(size)
-		GL_FLOAT,           // 타입(type)
-		GL_FALSE,           // 정규화(normalized)?
-		0,                  // 다음 요소 까지 간격(stride)
-		(void*)0            // 배열 버퍼의 오프셋(offset; 옮기는 값)
-	);
-	
-	glDrawArrays(GL_TRIANGLES, 0, 6); // 버텍스 0에서 시작해서; 총 3개의 버텍스로 -> 하나의 삼각형
-	glDisableVertexAttribArray(0);
+	MVPMatrix = VPMatrix;
 
+	std::cout << ( MVPMatrix.block<3, 3>(0, 0) * vertexData[0] + MVPMatrix.block<3, 1>(0, 3) ).transpose() << std::endl;
+	std::cout << ( MVPMatrix.block<3, 3>(0, 0) * vertexData[1] + MVPMatrix.block<3, 1>(0, 3) ).transpose() << std::endl;
+	std::cout << ( MVPMatrix.block<3, 3>(0, 0) * vertexData[2] + MVPMatrix.block<3, 1>(0, 3) ).transpose() << std::endl;
+	std::cout << std::endl;
+
+	glUniformMatrix4fv(MVPMatrixHandle, 1, GL_FALSE, MVPMatrix.data());
+
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+	glBufferData(GL_ARRAY_BUFFER, vertexData.size() * sizeof(float) * 3, &vertexData[0], GL_DYNAMIC_DRAW);
+	glVertexAttribPointer(vertexHandle, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+	glEnableVertexAttribArray(vertexHandle);
+
+
+
+	glDrawArrays(GL_TRIANGLES, 0, 6);
+
+	shader.unbind();
 
 }

@@ -20,6 +20,11 @@ public:
 	void onDraw();
 
 private:
+	
+	Eigen::Matrix4f viewMatrix;
+	
+	Eigen::Matrix4f VPMatrix;
+
 
 	TriangleRenderer triangleRenderer;
 	CubeRenderer cubeRenderer;

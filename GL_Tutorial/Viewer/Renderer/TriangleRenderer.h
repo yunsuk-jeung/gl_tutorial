@@ -17,16 +17,17 @@ public:
 	}
 
 	void initialize(std::string shaderFolderPath);
-	void setData();
-	void onDraw();
+	void onDraw(Eigen::Matrix4f VPMatrix);
 
 private:
-
 	Shader shader;
+	
+	GLuint MVPMatrixHandle;
+	Eigen::Matrix4f MVPMatrix;
+
 	GLuint vertexHandle;
-	GLuint VertexArrayID;
+	GLuint vertexBuffer;
 	std::vector<Eigen::Vector3f> vertexData;
 
-	GLuint vertexBuffer;
 
 };
