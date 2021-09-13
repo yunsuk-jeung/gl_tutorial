@@ -41,14 +41,14 @@
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h">
       <Filter>Viewer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h">
-      <Filter>Viewer\shader</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.h">
       <Filter>Viewer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.h">
       <Filter>Viewer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\GLMatrix.hpp">
+      <Filter>Viewer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -30,19 +30,12 @@ void TriangleRenderer::onDraw(Eigen::Matrix4f VPMatrix) {
 
 	MVPMatrix = VPMatrix;
 
-	std::cout << ( MVPMatrix.block<3, 3>(0, 0) * vertexData[0] + MVPMatrix.block<3, 1>(0, 3) ).transpose() << std::endl;
-	std::cout << ( MVPMatrix.block<3, 3>(0, 0) * vertexData[1] + MVPMatrix.block<3, 1>(0, 3) ).transpose() << std::endl;
-	std::cout << ( MVPMatrix.block<3, 3>(0, 0) * vertexData[2] + MVPMatrix.block<3, 1>(0, 3) ).transpose() << std::endl;
-	std::cout << std::endl;
-
 	glUniformMatrix4fv(MVPMatrixHandle, 1, GL_FALSE, MVPMatrix.data());
 
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 	glBufferData(GL_ARRAY_BUFFER, vertexData.size() * sizeof(float) * 3, &vertexData[0], GL_DYNAMIC_DRAW);
 	glVertexAttribPointer(vertexHandle, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	glEnableVertexAttribArray(vertexHandle);
-
-
 
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 

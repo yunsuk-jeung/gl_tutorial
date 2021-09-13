@@ -1,4 +1,5 @@
 #include "Viewer/Viewer.h"
+#include "Viewer/GLMatrix.hpp"
 #include <iostream>
 
 
@@ -14,6 +15,11 @@ void Viewer::initialize(int argc, char** argv, std::string shaderFolderPath) {
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_ALWAYS);
 
+	orthoSize[0] = initOrthoSize;
+	orthoSize[1] = initOrthoSize;
+	orthoShift.setZero();
+
+
 	viewMatrix.setIdentity();
 	
 	triangleRenderer.initialize(shaderFolderPath);
@@ -28,19 +34,29 @@ void Viewer::onDraw() {
 	
 	Eigen::Matrix4f camPose;
 	Eigen::Matrix4f proj;
+	Eigen::Matrix4f view;
 
-	camPose.setIdentity();
 	proj.setIdentity();
+	std::cout << orthoShift.transpose() << std::endl;
 
-	//float dist = 10.0f;
-	float dist = 10.0f;
+	float dist = 1.0f;
+	orthoSize.setOnes();
+	orthoSize *= dist;
 
-	camPose.block<3, 1>(0, 3) = Eigen::Vector3f(0,0,dist);
-	camPose = camPose.inverse();
+	std::cout << orthoSize.transpose() << std::endl;
 
-	float dist2 = 1.0f/(dist + 1.0f);
-	proj.block<3, 3>(0, 0) *= dist2;
-	VPMatrix = proj * camPose;
+	proj = GLMatrix::ortho(
+		-orthoSize[0] + orthoShift.y(), orthoSize[0] + orthoShift.y(),
+		-orthoSize[1] - orthoShift.x(), orthoSize[1] - orthoShift.x(),
+		0.1f, 1000.f);
+
+	float dist2 = 50.0f;
+
+	view = GLMatrix::lookAt(Eigen::Vector3f(0.0f, 0.0f, dist2), Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3f(0.0f, 1.0f, 0.0f));
+
+	VPMatrix = proj * view;
+
+	std::cout << VPMatrix << std::endl;
 
 
 	triangleRenderer.onDraw(VPMatrix);

@@ -21,6 +21,10 @@ public:
 
 private:
 	
+	float initOrthoSize = 10.0f;
+	Eigen::Vector2f orthoSize;
+	Eigen::Vector2f orthoShift;
+
 	Eigen::Matrix4f viewMatrix;
 	
 	Eigen::Matrix4f VPMatrix;

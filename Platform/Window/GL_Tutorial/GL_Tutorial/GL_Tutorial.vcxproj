@@ -25,9 +25,9 @@
     <ClCompile Include="windows_main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\GLMatrix.hpp" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.h" />
-    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h" />
   </ItemGroup>
   <ItemGroup>
