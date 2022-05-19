@@ -9,11 +9,11 @@
 
 #include "Viewer/shader/Shader.h"
 
-class TriangleRenderer {
+class RectengleRenderer {
 public:
-	TriangleRenderer() {
+	RectengleRenderer() {
 	}
-	~TriangleRenderer() {
+	~RectengleRenderer() {
 	}
 
 	void initialize(std::string shaderFolderPath);
@@ -29,8 +29,10 @@ private:
 	
 	GLuint vertexArray;
 	GLuint vertexBuffer;
+	GLuint indexBuffer;
 
 	std::vector<Eigen::Vector3f> vertexData;
+	std::vector<unsigned int > indices;
 
 
 };

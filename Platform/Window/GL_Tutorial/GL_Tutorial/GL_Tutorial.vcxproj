@@ -20,19 +20,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.cpp" />
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.cpp" />
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRendererWithTexture.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.cpp" />
     <ClCompile Include="windows_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\GLMatrix.hpp" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.h" />
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.h" />
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRendererWithTexture.h" />
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglefshader.txt" />
-    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglevshader.txt" />
+    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglefshader.glsl" />
+    <Text Include="..\..\..\..\GL_Tutorial\Viewer\shader\trianglevshader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangle.frag" />
+    <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangle.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
