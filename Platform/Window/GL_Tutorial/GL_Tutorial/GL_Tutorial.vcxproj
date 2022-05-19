@@ -22,7 +22,7 @@
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.cpp" />
-    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRendererWithTexture.cpp" />
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.cpp" />
     <ClCompile Include="windows_main.cpp" />
   </ItemGroup>
@@ -31,7 +31,7 @@
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.h" />
-    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRendererWithTexture.h" />
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h" />
   </ItemGroup>
@@ -42,6 +42,8 @@
   <ItemGroup>
     <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangle.frag" />
     <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangle.vert" />
+    <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangleWithTexture.frag" />
+    <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangleWithTexture.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -90,9 +92,11 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Eigen_Ceres_CV_GL_debug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Eigen_Ceres_CV_GL_release.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -131,6 +135,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../../../../GL_Tutorial;../../../../../maxstsdk_3rdparty_library/header/Eigen3.3.7;../../../../../maxstsdk_3rdparty_library/library/OpenGL/include;../../../../../maxstsdk_3rdparty_library/library/ceres-solver-2.0.0/include/miniglog;../../../../../maxstsdk_3rdparty_library/library/ceres-solver-2.0.0/include;../../../../../maxstsdk_3rdparty_library/library/OpenCV3.4.1/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -39,7 +39,7 @@
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.cpp">
       <Filter>Viewer\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRendererWithTexture.cpp">
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.cpp">
       <Filter>Viewer\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.h">
       <Filter>Viewer\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRendererWithTexture.h">
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.h">
       <Filter>Viewer\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
@@ -79,6 +79,12 @@
       <Filter>Viewer\shader</Filter>
     </None>
     <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangle.frag">
+      <Filter>Viewer\shader</Filter>
+    </None>
+    <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangleWithTexture.vert">
+      <Filter>Viewer\shader</Filter>
+    </None>
+    <None Include="..\..\..\..\GL_Tutorial\Viewer\shader\triangleWithTexture.frag">
       <Filter>Viewer\shader</Filter>
     </None>
   </ItemGroup>

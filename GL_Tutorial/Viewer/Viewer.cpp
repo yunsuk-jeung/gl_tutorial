@@ -23,6 +23,7 @@ void Viewer::initialize(int argc, char** argv, std::string shaderFolderPath) {
 	
 	triangleRenderer.initialize(shaderFolderPath);
 	rectengleRenderer.initialize(shaderFolderPath);
+	rectangleRendererWithTexture.initialize(shaderFolderPath);
 	//cubeRenderer.initialize(shaderFolderPath);
 }
 
@@ -33,7 +34,7 @@ void Viewer::onDraw() {
 
 	//triangleRenderer.onDraw(VPMatrix);
 	//triangleRenderer.onDraw();
-	rectengleRenderer.onDraw();
+	rectangleRendererWithTexture.onDraw();
 
 	glutSwapBuffers();
 	glutPostRedisplay();

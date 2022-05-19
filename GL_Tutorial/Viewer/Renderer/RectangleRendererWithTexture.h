@@ -9,11 +9,11 @@
 
 #include "Viewer/shader/Shader.h"
 
-class TriangleRendererWithTexture {
+class RectangleRendererWithTexture {
 public:
-	TriangleRendererWithTexture() {
+	RectangleRendererWithTexture() {
 	}
-	~TriangleRendererWithTexture() {
+	~RectangleRendererWithTexture() {
 	}
 
 	void initialize(std::string shaderFolderPath);
@@ -27,8 +27,11 @@ private:
 
 	GLuint vertexHandle;
 	
+	GLuint textureId;
 	GLuint vertexArray;
 	GLuint vertexBuffer;
+	GLuint elementBuffer;
+	GLuint textureCoordsId;
 
 	//float vertexData[9];
 

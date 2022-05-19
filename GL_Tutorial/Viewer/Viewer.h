@@ -4,10 +4,12 @@
 #include <string>
 #include <Eigen/Dense>
 #include <vector>
-\
-#include "Viewer/Renderer/RectengleRenderer.h"
-#include "Viewer/Renderer/TriangleRenderer.h"
+
 #include "Viewer/Renderer/CubeRenderer.h"
+#include "Viewer/Renderer/RectengleRenderer.h"
+#include "Viewer/Renderer/RectangleRendererWithTexture.h"
+
+#include "Viewer/Renderer/TriangleRenderer.h"
 
 
 class Viewer {
@@ -38,5 +40,6 @@ private:
 	TriangleRenderer triangleRenderer;
 	CubeRenderer cubeRenderer;
 	RectengleRenderer rectengleRenderer;
+	RectangleRendererWithTexture rectangleRendererWithTexture;
 
 };
