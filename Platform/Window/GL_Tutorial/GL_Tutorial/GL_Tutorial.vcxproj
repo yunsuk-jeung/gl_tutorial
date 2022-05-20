@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.cpp" />
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RenderToTexture.cpp" />
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RTTRenderer.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.cpp" />
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.cpp" />
@@ -30,6 +32,8 @@
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\GLMatrix.hpp" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\CubeRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectengleRenderer.h" />
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RenderToTexture.h" />
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RTTRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\TriangleRenderer.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.h" />
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\shader\Shader.h" />

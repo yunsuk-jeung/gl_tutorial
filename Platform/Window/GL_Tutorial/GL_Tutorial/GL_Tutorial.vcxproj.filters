@@ -42,6 +42,12 @@
     <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.cpp">
       <Filter>Viewer\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RTTRenderer.cpp">
+      <Filter>Viewer\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RenderToTexture.cpp">
+      <Filter>Viewer\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Viewer.h">
@@ -63,6 +69,12 @@
       <Filter>Viewer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RectangleRendererWithTexture.h">
+      <Filter>Viewer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RenderToTexture.h">
+      <Filter>Viewer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\GL_Tutorial\Viewer\Renderer\RTTRenderer.h">
       <Filter>Viewer\Renderer</Filter>
     </ClInclude>
   </ItemGroup>

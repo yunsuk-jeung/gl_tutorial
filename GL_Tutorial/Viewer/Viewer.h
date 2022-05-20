@@ -8,6 +8,7 @@
 #include "Viewer/Renderer/CubeRenderer.h"
 #include "Viewer/Renderer/RectengleRenderer.h"
 #include "Viewer/Renderer/RectangleRendererWithTexture.h"
+#include "Viewer/Renderer/RTTRenderer.h"
 
 #include "Viewer/Renderer/TriangleRenderer.h"
 
@@ -41,5 +42,5 @@ private:
 	CubeRenderer cubeRenderer;
 	RectengleRenderer rectengleRenderer;
 	RectangleRendererWithTexture rectangleRendererWithTexture;
-
+	RTTRenderer rttRenderer;
 };

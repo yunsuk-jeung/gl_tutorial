@@ -6,6 +6,7 @@
 void RectangleRendererWithTexture::initialize(std::string shaderFolderPath) {
 
 	shader.init(shaderFolderPath + "/triangleWithTexture.vert", shaderFolderPath + "/triangleWithTexture.frag");
+	std::cout << "RectangleRendererWithTexture shader ID : " << shader.getShaderId() << "texture1 : " << glGetUniformLocation(shader.getShaderId(), "texture1") << std::endl;
 
 	float vertexData[] = {
 		-0.5f, 0.5f, 0.0f,// top left
@@ -61,6 +62,8 @@ void RectangleRendererWithTexture::initialize(std::string shaderFolderPath) {
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width2, height2, 0, GL_RGB, GL_UNSIGNED_BYTE, data2);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	   
+	glBindTexture(GL_TEXTURE_2D, 0);
+
 
 	glGenVertexArrays(1, &vertexArray);
 	glBindVertexArray(vertexArray);
@@ -101,7 +104,7 @@ void RectangleRendererWithTexture::onDraw() {
 
 
 	glBindVertexArray(vertexArray);
-	//glDrawArrays(GL_TRIANGLES, 0, 3);
+
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 	shader.unbind();

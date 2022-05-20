@@ -21,9 +21,10 @@ void Viewer::initialize(int argc, char** argv, std::string shaderFolderPath) {
 
 	viewMatrix.setIdentity();
 	
-	triangleRenderer.initialize(shaderFolderPath);
-	rectengleRenderer.initialize(shaderFolderPath);
-	rectangleRendererWithTexture.initialize(shaderFolderPath);
+	//triangleRenderer.initialize(shaderFolderPath);
+	//rectengleRenderer.initialize(shaderFolderPath);
+	//rectangleRendererWithTexture.initialize(shaderFolderPath);
+	rttRenderer.initialize(shaderFolderPath);
 	//cubeRenderer.initialize(shaderFolderPath);
 }
 
@@ -34,7 +35,8 @@ void Viewer::onDraw() {
 
 	//triangleRenderer.onDraw(VPMatrix);
 	//triangleRenderer.onDraw();
-	rectangleRendererWithTexture.onDraw();
+	//rectangleRendererWithTexture.onDraw();
+	rttRenderer.onDraw();
 
 	glutSwapBuffers();
 	glutPostRedisplay();
