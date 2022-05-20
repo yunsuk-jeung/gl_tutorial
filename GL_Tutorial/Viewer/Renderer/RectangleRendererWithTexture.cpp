@@ -8,7 +8,7 @@ void RectangleRendererWithTexture::initialize(std::string shaderFolderPath) {
 	shader.init(shaderFolderPath + "/triangleWithTexture.vert", shaderFolderPath + "/triangleWithTexture.frag");
 
 	float vertexData[] = {
-		- 0.5f, 0.5f, 0.0f,// top left
+		-0.5f, 0.5f, 0.0f,// top left
 		0.5f, 0.5f, 0.0f, // top right
 		0.5f, -0.5f, 0.0f, // bottom-right
 		-0.5f, -0.5f, 0.0f, // bottom-left
@@ -31,16 +31,37 @@ void RectangleRendererWithTexture::initialize(std::string shaderFolderPath) {
 	int length = image.cols * image.rows * image.channels();
 	unsigned char* data = image.data;
 
+	cv::Mat image2 = cv::imread("../../../../image2.png", cv::IMREAD_COLOR);
+	cv::flip(image2, image2, 0);
+	cv::cvtColor(image2, image2, CV_BGR2RGB);
+	int width2 = image2.cols;
+	int height2 = image2.rows;
+	int length2 = image2.cols * image2.rows * image2.channels();
+	unsigned char* data2 = image2.data;
+
 	glGenTextures(1, &textureId);
 	glBindTexture(GL_TEXTURE_2D, textureId);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);	
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 	glGenerateMipmap(GL_TEXTURE_2D);
+
+	glGenTextures(1, &textureId2);
+	glBindTexture(GL_TEXTURE_2D, textureId2);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width2, height2, 0, GL_RGB, GL_UNSIGNED_BYTE, data2);
+	glGenerateMipmap(GL_TEXTURE_2D);
 	   
+
 	glGenVertexArrays(1, &vertexArray);
 	glBindVertexArray(vertexArray);
 
@@ -69,7 +90,16 @@ void RectangleRendererWithTexture::initialize(std::string shaderFolderPath) {
 void RectangleRendererWithTexture::onDraw() {
 
 	shader.bind();
+
+	glUniform1i(glGetUniformLocation(shader.getShaderId(), "texture1"), 0);
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, textureId);
+
+	glUniform1i(glGetUniformLocation(shader.getShaderId(), "texture2"), 1);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, textureId2);
+
+
 	glBindVertexArray(vertexArray);
 	//glDrawArrays(GL_TRIANGLES, 0, 3);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
