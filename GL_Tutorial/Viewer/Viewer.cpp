@@ -33,6 +33,7 @@ void Viewer::onDraw() {
 	glClearColor(0, 0, 0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
 	//triangleRenderer.onDraw(VPMatrix);
 	//triangleRenderer.onDraw();
 	//rectangleRendererWithTexture.onDraw();

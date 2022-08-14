@@ -29,16 +29,10 @@ private:
 	
 	GLuint textureId;
 	GLuint textureId2;
-
 	GLuint textureCoordsId;
-
 	GLuint vertexArray;
-
 	GLuint vertexBuffer;
-
 	GLuint elementBuffer;
-
-
 	//float vertexData[9];
 
 

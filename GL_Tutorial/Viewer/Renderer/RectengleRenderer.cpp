@@ -24,8 +24,8 @@ void RectengleRenderer::initialize(std::string shaderFolderPath) {
 
 	//MVPMatrixHandle = glGetUniformLocation(shader.getShaderId(), "MVPMatrix");s
 
-	glGenVertexArrays(1, &vertexArray);
-	glBindVertexArray(vertexArray);
+	//glGenVertexArrays(1, &vertexArray);
+	//glBindVertexArray(vertexArray);
 
 
 	glGenBuffers(1, &vertexBuffer);
@@ -49,7 +49,14 @@ void RectengleRenderer::onDraw() {
 
 	shader.bind();
 
-	glBindVertexArray(vertexArray);
+	//glBindVertexArray(vertexArray);
+
+	glGenBuffers(1, &vertexBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+	//glBufferData(GL_ARRAY_BUFFER, vertexData.size() * sizeof(float) * 3, &vertexData[0], GL_DYNAMIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
 
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
